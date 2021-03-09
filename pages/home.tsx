@@ -31,9 +31,9 @@ function Home() {
     </Layout>
   );
 }
-
+/* 
 export async function getServerSideProps() {
   return { props: {} };
 }
-
+ */
 export default Home;
