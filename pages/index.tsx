@@ -22,7 +22,7 @@ export default function Index({ ufs }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const defaultUrl = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
 
   let ufs = [];

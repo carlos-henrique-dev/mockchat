@@ -41,6 +41,20 @@ type Props = {
   ufsList: any[];
 };
 
+/* const defaultUrl = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+
+function handler(req, res) {
+  const { ufcode } = req.query;
+  return axios
+    .get(`${defaultUrl}/${ufcode}/municipios`)
+    .then((result) => {
+      res.status(200).json(result.data);
+    })
+    .catch((err) => {
+      res.status(200).json([]);
+    });
+} */
+
 export default function RegistrationForm({ onContinue, ufsList }: Props) {
   const [chatHistory, setChatHistory] = useState<ChatMessages[]>(initialChat);
   const [currentQuestion, setCurrentQuestion] = useState({ id: 0, field: "name" });
@@ -49,7 +63,7 @@ export default function RegistrationForm({ onContinue, ufsList }: Props) {
 
   async function getCities(ufcode: number) {
     if (ufcode !== 0) {
-      const res = await axios.get("/api/location", { params: { ufcode } });
+      const res = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufcode}/municipios`);
       setCities([].concat.apply([], res.data));
     }
   }
