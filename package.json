@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 192.168.1.104",
-    "build": "NODE_ENV=production  next build",
+    "build": "NODE_ENV=production  next build && next export",
     "start": "NODE_ENV=production next start"
   },
   "dependencies": {
