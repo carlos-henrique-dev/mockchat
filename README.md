@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mockchat
 
-## Getting Started
+## Sobre o projeto
+Projeto desenvolvido em ``Next.js`` como teste para [Workalove Edtech](https://workalove.com/).
 
-First, run the development server:
+## On netlify
+[Clique aqui para acessar o projeto no netlify](https://wonderful-meitner-b75607.netlify.app/)
 
-```bash
-npm run dev
-# or
+
+## Rodando o projeto
+Instale as dependências do projeto rodando o comando:
+```
+yarn
+```
+Depois inicie o servidor com o comando:
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Bibliotecas utilizadas
+- [Axios](https://github.com/axios/axios) ;
+- [Formik](https://formik.org/docs/overview);
+- [Yup](https://github.com/jquense/yup);
+- [Sass](https://sass-lang.com/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Screenshots
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tela inicial
+![Screenshot da tela inicial](/screenshots/home.png "Screenshot da tela inicial")
+## Chatbot
+![Screenshot do chatbot](/screenshots/chat.png "Screenshot do chatbot")
+## Tela principal
+![Screenshot da tela principal](/screenshots/main.png "Screenshot da tela principal")
