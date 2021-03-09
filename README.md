@@ -4,7 +4,7 @@
 Projeto desenvolvido em ``Next.js`` como teste para [Workalove Edtech](https://workalove.com/).
 
 ## On netlify
-[Clique aqui para acessar o projeto no netlify](https://wonderful-meitner-b75607.netlify.app/)
+[Clique aqui para acessar o projeto no netlify](https://romantic-elion-6824a7.netlify.app/)
 
 
 ## Rodando o projeto
