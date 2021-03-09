@@ -16,7 +16,12 @@ import { fifthQuestion, firstQuestion, fourthQuestion, secondQuestion, thirdQues
 import dayjs from "dayjs";
 import axios from "axios";
 
-function renderBotMessage(chatHistory: ChatMessages[]) {
+/**
+ * Maps the chat history and returns an array of messages
+ * @param chatHistory
+ * @returns An array of messages to be rendered on the chat
+ */
+function renderChatMessages(chatHistory: ChatMessages[]) {
   const isDate = (text: string) => dayjs(text).isValid();
 
   return chatHistory.map((message) => {
@@ -40,20 +45,6 @@ type Props = {
   onContinue: () => void;
   ufsList: any[];
 };
-
-/* const defaultUrl = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
-
-function handler(req, res) {
-  const { ufcode } = req.query;
-  return axios
-    .get(`${defaultUrl}/${ufcode}/municipios`)
-    .then((result) => {
-      res.status(200).json(result.data);
-    })
-    .catch((err) => {
-      res.status(200).json([]);
-    });
-} */
 
 export default function RegistrationForm({ onContinue, ufsList }: Props) {
   const [chatHistory, setChatHistory] = useState<ChatMessages[]>(initialChat);
@@ -108,6 +99,9 @@ export default function RegistrationForm({ onContinue, ufsList }: Props) {
       },
     ];
 
+    /**
+     * if the chat is on the last quesiton, it sends the answer to the api and allow the user to go to the next page
+     */
     if (currentQuestion.id <= 4) {
       if (currentQuestion.id === 4) {
         await handleSave(values);
@@ -118,6 +112,10 @@ export default function RegistrationForm({ onContinue, ufsList }: Props) {
       setCurrentQuestion({ id: currentQuestion.id + 1, field: fieldsNames[currentQuestion.id + 1] });
     }
 
+    /**
+     * workaround for mobile
+     * Makes the chat scroll automaticaly to the bottom after the new answer
+     */
     let chatscreen = document.getElementById("content");
     chatscreen.scrollTop = chatscreen.scrollHeight;
   }
@@ -125,7 +123,7 @@ export default function RegistrationForm({ onContinue, ufsList }: Props) {
   return (
     <div className="registration">
       <div className="content" id="content">
-        {renderBotMessage(chatHistory)}
+        {renderChatMessages(chatHistory)}
       </div>
 
       {loading ? (
