@@ -1,0 +1,59 @@
+@use './variables.scss' as v;
+
+.greetings {
+  @include v.defaultDisplay;
+  flex-direction: column;
+
+  .content {
+    @include v.defaultDisplay;
+    flex-direction: column;
+    background-image: linear-gradient(to right, v.$gradient-one, v.$gradient-two);
+    border-radius: 10px;
+    padding: 30px;
+    height: 400px;
+    max-width: 600px;
+    justify-content: space-between;
+    color: v.$white;
+
+    h1 {
+      font-size: 25px;
+      font-weight: 400;
+      span {
+        font-weight: 700;
+        font-size: 30px;
+        color: v.$blue-btn;
+      }
+    }
+
+    h3 {
+      text-align: justify;
+      font-weight: 600;
+    }
+
+    p {
+      span {
+        font-weight: bolder;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .next-btn {
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    background-color: v.$blue-btn;
+    color: v.$white;
+    font-size: 20px;
+    font-weight: 700;
+    transition: transform 0.3s;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+$background-color: #222629;
+$white: #eaeaea;
+$secundary-red: #e25555;
+$blue-btn: #374785;
+$gray: #b1b1b1;
+$light-gray: #dadada;
+
+$gradient-one: #ff519a;
+$gradient-two: #f57e48;
+
+@mixin defaultDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

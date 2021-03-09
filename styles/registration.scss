@@ -1,0 +1,201 @@
+@use './variables.scss' as v;
+
+.registration {
+  @include v.defaultDisplay;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .content {
+    flex-direction: column;
+    border-radius: 10px 10px 0 0;
+    background: v.$white;
+    padding: 10px 10px 80px;
+    height: 70vh;
+    min-width: 300px;
+    max-width: 600px;
+    overflow: auto;
+    justify-content: flex-start;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    [class$="message"] {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+
+      animation-name: fadein;
+      animation-duration: 0.5s;
+
+      .icon {
+        font-size: 25px;
+      }
+
+      span {
+        display: block;
+        border-radius: 10px;
+        padding: 10px 5px;
+        background-color: v.$light-gray;
+        max-width: 80%;
+      }
+    }
+
+    [class^="bot-"] {
+      display: flex;
+      flex-direction: row;
+      .icon {
+        color: v.$gradient-one;
+      }
+
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    [class^="user-"] {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .icon {
+        color: v.$gradient-two;
+      }
+
+      span {
+        display: inline-block;
+        margin-right: 5px;
+        box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .form-input {
+    position: relative;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+
+    form {
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+      width: 100%;
+      .form-field {
+        width: 100%;
+        .error-message {
+          text-align: center;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 1;
+          padding: 10px;
+          background: v.$secundary-red;
+          transition: all 0.3s;
+          color: v.$white;
+
+          &.show {
+            top: -40px;
+          }
+        }
+
+        input,
+        select,
+        datalist {
+          position: relative;
+          z-index: 5;
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 0 0 0 10px;
+          padding-left: 20px;
+          font-size: 15px;
+          outline: none;
+          &::-webkit-input-placeholder,
+          &::placeholder {
+            color: v.$gray;
+          }
+        }
+      }
+
+      button {
+        position: relative;
+        z-index: 5;
+        height: 50px;
+        width: 60px;
+        border-radius: 0 0 10px 0;
+        border: none;
+        background-color: v.$blue-btn;
+        transition: transform 0.3s;
+        outline: none;
+        svg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 60%;
+          width: 100%;
+          color: v.$white;
+        }
+
+        &:active {
+          svg {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+
+  .finish-button {
+    height: 50px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    border: none;
+    outline: none;
+    background-color: v.$blue-btn;
+    color: v.$white;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: transform 0.3s;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .form-spinner {
+    width: 100%;
+    height: 50px;
+    background: v.$blue-btn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+
+    .fa-spin {
+      font-size: 30px;
+      color: v.$white;
+      animation: fa-spin 2s infinite linear;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
